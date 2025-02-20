@@ -13,7 +13,8 @@ export default function Login() {
     e.preventDefault();
     const validEmail = 'ad@min.com';
     const validPassword = '1234';
-
+    
+    // valida la contraseña y el email
     if (email === validEmail && password === validPassword) {
       alert('Login exitoso');
       router.push('/home');  // Redirige al Dashboard
