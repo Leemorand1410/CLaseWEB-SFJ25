@@ -1,0 +1,18 @@
+.body { 
+    margin: 0; /* Elimina el margen por defecto */
+    border: 0; /* Elimina el borde por defecto */
+    padding: 0; /* Elimina el relleno por defecto */
+    font-family: Arial, sans-serif;
+}
+.header {
+    display: flex;
+    margin: 0; /* Elimina el margen por defecto */
+    border: 0; /* Elimina el borde por defecto */
+    padding: 0; /* Elimina el relleno por defecto */
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: white;
+}

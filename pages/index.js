@@ -1,6 +1,8 @@
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "/context/AuthContext";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import styles from "/styles/login.module.css"; 
+
 
 const Home = () => {
   const { user } = useAuth();
@@ -16,7 +18,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Bienvenido a Home</h1>
+      <h1>Bienvenido a la página</h1>
     </div>
   );
 };
