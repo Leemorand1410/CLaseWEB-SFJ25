@@ -1,50 +1,24 @@
-"use client";
+import { useAuth } from "../context/AuthContext";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import styles from '../styles/login.module.css';  // Ajusta la ruta si es necesario
-
-export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const Home = () => {
+  const { user } = useAuth();
   const router = useRouter();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validEmail = 'ad@min.com';
-    const validPassword = '1234';
-    
-    // valida la contraseña y el email
-    if (email === validEmail && password === validPassword) {
-      alert('Login exitoso');
-      router.push('/home');  // Redirige al Dashboard
-    } else {
-      alert('Credenciales incorrectas');
+  useEffect(() => {
+    if (!user) {
+      router.push("/"); // Redirige al login si no está autenticado
     }
-  };
+  }, [user]);
+
+  if (!user) return null; // Evita que se renderice la página mientras redirige
 
   return (
-    <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.title}>Login</h1>
-        <label className={styles.label}>Email:</label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className={styles.input}
-        />
-        <label className={styles.label}>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          className={styles.input}
-        />
-        <button type="submit" className={styles.button}>Login</button>
-      </form>
+    <div>
+      <h1>Bienvenido a Home</h1>
     </div>
   );
-}
+};
+
+export default Home;
