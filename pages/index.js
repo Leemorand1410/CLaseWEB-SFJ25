@@ -1,24 +1,27 @@
-import { useAuth } from "/context/AuthContext";
-import { useEffect } from "react";
 import { useRouter } from "next/router";
-import styles from "/styles/login.module.css"; 
+import styles from "/styles/index.module.css";
 
 
 const Home = () => {
-  const { user } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    if (!user) {
-      router.push("/"); // Redirige al login si no está autenticado
-    }
-  }, [user]);
-
-  if (!user) return null; // Evita que se renderice la página mientras redirige
-
   return (
-    <div>
-      <h1>Bienvenido a la página</h1>
+    <div className={styles.welcomeContainer}>
+      <div className={styles.welcomeCard}>
+        <h1 className={styles.welcomeTitle}>¡Bienvenido!</h1>
+        <p className={styles.welcomeText}>
+          Descubre todas las funcionalidades que tenemos para ti. Inicia sesión o regístrate para acceder a tu perfil.
+        </p>
+
+        <div className={styles.buttonContainer}>
+          <button className={styles.loginButton} onClick={() => router.push('/login')}>
+            Iniciar Sesión
+          </button>
+          <button className={styles.signupButton} onClick={() => router.push('/login')}>
+            Registrarse
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

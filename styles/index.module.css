@@ -1,0 +1,65 @@
+.welcomeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0070f3, #00c6ff);
+    color: white;
+    text-align: center;
+  }
+  
+  .welcomeCard {
+    background: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+  }
+  
+  .welcomeTitle {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .welcomeText {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .loginButton,
+  .signupButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .loginButton {
+    background: #0070f3;
+    color: white;
+  }
+  
+  .signupButton {
+    background: #00c6ff;
+    color: white;
+  }
+  
+  .loginButton:hover {
+    background: #005bb5;
+  }
+  
+  .signupButton:hover {
+    background: #0096d6;
+  }
+  
