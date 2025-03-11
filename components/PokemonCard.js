@@ -1,4 +1,4 @@
-import styles from "../styles/pokemon.module.css"; // Importar el CSS como módulo
+import styles from "../styles/pokemon.module.css";
 
 const typeColors = {
   normal: "#A8A77A",
@@ -24,7 +24,8 @@ const typeColors = {
 export default function PokemonCard({ pokemon }) {
   const primaryType = pokemon.types[0].type.name;
   const cardStyle = {
-    border: `5px solid ${typeColors[primaryType] || "#ccc"}` // Borde con color del tipo
+    borderColor: typeColors[primaryType] || "#ccc", // Color del borde
+    "--type-color": typeColors[primaryType] || "#ccc" // Para usar en CSS variables
   };
 
   return (
@@ -32,11 +33,14 @@ export default function PokemonCard({ pokemon }) {
       <div className={styles.pokemonImage}>
         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
       </div>
-      <h2 className={styles.pokemonName}>{pokemon.name.toUpperCase()} (#{pokemon.id})</h2>
-      <div className={styles.pokemonInfo}>
-        <p><strong>Tipo:</strong> {pokemon.types.map(t => t.type.name).join(", ")}</p>
-        <p><strong>Altura:</strong> {pokemon.height / 10} m</p>
-        <p><strong>Peso:</strong> {pokemon.weight / 10} kg</p>
+      <h2 className={styles.pokemonName}>{pokemon.name.toUpperCase()}</h2>
+      <p className={styles.pokemonNumber}>#{pokemon.id}</p>
+      <div className={styles.pokemonBottom}>
+        <div className={styles.pokemonInfo}>
+          <p><strong>Tipo:</strong> {pokemon.types.map(t => t.type.name).join(", ")}</p>
+          <p><strong>Altura:</strong> {pokemon.height / 10} m</p>
+          <p><strong>Peso:</strong> {pokemon.weight / 10} kg</p>
+        </div>
       </div>
     </div>
   );

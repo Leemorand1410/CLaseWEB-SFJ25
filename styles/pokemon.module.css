@@ -1,43 +1,106 @@
-/* 📌 Contenedor principal */
+
+/* 📌 Contenedor Principal */
 .pokemonContainer {
-    max-width: 1000px; /* Más ajustado a la imagen */
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+    max-width: 1200px;  /* 📌 Tamaño máximo del grid */
+    width: 90%;
+    margin: 0 auto;  /* 📌 Centrar el grid */
+    display: flex;
+    padding: 10px; 
+    flex-direction: column;
+    align-items: center;
 }
 
-/* 📌 Cuadrícula que se asemeje más a la imagen */
+/* 📌 Cuadrícula de Pokémon */
 .pokemonGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
-    gap: 30px; /* Espaciado entre tarjetas */
+    grid-template-columns: repeat(5, 1fr); /* 📌 5 columnas en pantallas grandes */
+    gap: 20px;
     justify-content: center;
     align-items: center;
+    max-width: 1000px; /* 📌 Evita que el grid se estire */
+    width: 100%;
+}
+
+/* 📌 Diseño adaptable para pantallas más pequeñas */
+@media (max-width: 1024px) {
+    .pokemonGrid {
+        grid-template-columns: repeat(3, 1fr); /* 📌 3 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .pokemonGrid {
+        grid-template-columns: repeat(2, 1fr); /* 📌 2 columnas en móviles grandes */
+    }
+}
+
+@media (max-width: 480px) {
+    .pokemonGrid {
+        grid-template-columns: repeat(1, 1fr); /* 📌 1 columna en móviles pequeños */
+    }
+}
+
+/* 📌 Paginador */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     margin-top: 20px;
 }
 
+.pagination button {
+    background: #ffcc00;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.pagination button:hover {
+    background: #e6b800;
+}
+
+/* 📌 Página activa resaltada */
+.pagination .activePage {
+    background: #ff8000;
+    font-weight: bold;
+    color: white;
+}
+----------------------------------------
+.pokemonContainer {
+    max-width: 100%; /* Más ajustado a la imagen */
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
 /* 📌 Tarjeta de Pokémon */
 .pokemonCard {
-    background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    padding: 20px;
     text-align: center;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    color: black; /* Mejor contraste */
-    max-width: 250px;
+    color: black;
+    max-width: 220px; /* 📌 Hacer la carta más delgada */
     width: 100%;
-    font-family: Arial, sans-serif; /* Fuente similar */
+    background: white;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid; /* 📌 El color del borde será dinámico */
 }
 
 /* Efecto hover */
-.pokemon-card:hover {
+.pokemonCard:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* 📌 Imagen del Pokémon */
-.pokemon-image img {
+.pokemonImage img {
     width: 100px;
     height: 100px;
     object-fit: contain;
@@ -48,14 +111,35 @@
 }
 
 /* 📌 Nombre del Pokémon (Estilo grande y en negrita) */
-.pokemon-name {
-    font-size: 20px;
+.pokemonName {
+    font-size: 18px;
     font-weight: bold;
     margin: 10px 0;
+    position: relative;
 }
 
+.pokemonBottom { 
+    padding: 18px 0;  
+    color: white;
+    position: relative;
+    bottom: 0; 
+    width: 100%;
+    text-align: center;
+    background: var(--type-color); /* 📌 Color de fondo dinámico */
+}
+
+.pokemonNumber {
+    position: absolute;
+    color: black;
+    padding: 5px;
+    background-color: (--type-color); /* 📌 Color de fondo dinámico */
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
 /* 📌 Información del Pokémon (Estilo similar al de la imagen) */
-.pokemon-info {
+.pokemonInfo {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
@@ -63,11 +147,11 @@
 }
 
 /* 📌 Diferenciación de "Tipo", "Altura", "Peso" */
-.pokemon-info p {
+.pokemonInfo p {
     margin: 3px 0;
 }
 
-.pokemon-info strong {
+.pokemonInfo strong {
     color: black; /* Texto en negrita */
 }
 
@@ -87,4 +171,57 @@
 
 .load-more:hover {
     background-color: #e6b800;
+}
+
+/* 📌 Contenedor del Header */
+.headerContainer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* 📌 Buscador */
+.searchBar {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 200px;
+}
+
+/* 📌 Dropdown de filtros */
+.filterDropdown {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    background: white;
+}
+
+/* 📌 Paginador */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background: #ffcc00;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
 }

@@ -5,6 +5,7 @@ import styles from "/styles/index.module.css";
 const Home = () => {
   const router = useRouter();
 
+  
   return (
     <div className={styles.welcomeContainer}>
       <div className={styles.welcomeCard}>
