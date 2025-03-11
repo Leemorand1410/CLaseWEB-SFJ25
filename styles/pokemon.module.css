@@ -1,0 +1,90 @@
+/* 📌 Contenedor principal */
+.pokemonContainer {
+    max-width: 1000px; /* Más ajustado a la imagen */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 📌 Cuadrícula que se asemeje más a la imagen */
+.pokemonGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
+    gap: 30px; /* Espaciado entre tarjetas */
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* 📌 Tarjeta de Pokémon */
+.pokemonCard {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    color: black; /* Mejor contraste */
+    max-width: 250px;
+    width: 100%;
+    font-family: Arial, sans-serif; /* Fuente similar */
+}
+
+/* Efecto hover */
+.pokemon-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 📌 Imagen del Pokémon */
+.pokemon-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 📌 Nombre del Pokémon (Estilo grande y en negrita) */
+.pokemon-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* 📌 Información del Pokémon (Estilo similar al de la imagen) */
+.pokemon-info {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+}
+
+/* 📌 Diferenciación de "Tipo", "Altura", "Peso" */
+.pokemon-info p {
+    margin: 3px 0;
+}
+
+.pokemon-info strong {
+    color: black; /* Texto en negrita */
+}
+
+/* 📌 Botón de cargar más Pokémon */
+.load-more {
+    background-color: #ffcc00;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.load-more:hover {
+    background-color: #e6b800;
+}

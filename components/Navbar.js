@@ -10,6 +10,7 @@ const Navbar = () => {
       <div>
         <Link href="/home" style={{ marginRight: "1rem", color: "#fff" }}>Home</Link>
         <Link href="/profile" style={{ marginRight: "1rem", color: "#fff" }}>Perfil</Link>
+        <Link href="/pokemon" style={{ marginRight: "1rem", color: "#fff" }}>Pokémon</Link>
     </div>
       <div>
         {user ? (
