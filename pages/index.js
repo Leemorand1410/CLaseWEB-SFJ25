@@ -18,7 +18,7 @@ const Home = () => {
           <button className={styles.loginButton} onClick={() => router.push('/login')}>
             Iniciar Sesión
           </button>
-          <button className={styles.signupButton} onClick={() => router.push('/login')}>
+          <button className={styles.signupButton} onClick={() => router.push('/Registrar')}>
             Registrarse
           </button>
         </div>

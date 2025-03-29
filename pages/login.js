@@ -34,6 +34,10 @@ export default function Login() {
           required
           className={styles.input}
         />
+        <p>Si no tienes una cuenta <a href="/Registrar"> Registrate</a></p> 
+        <br/>
+        <p>Si olvidaste tu contraseña <a href="/Recuperar">Recuperar</a></p>
+        <br/>
         <button type="submit" className={styles.button}>Login</button>
       </form>
     </div>

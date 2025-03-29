@@ -56,3 +56,17 @@
     background-color: #005bb5;
   }
   
+  .message {
+    margin-top: 1rem;
+    color: #2e7d32; /* verde si éxito, cambia a rojo si error */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .link {
+    color: #0070f3;
+    text-decoration: underline;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
